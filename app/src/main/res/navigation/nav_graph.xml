@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/registerFragment">
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.exercise.tbchomeworkthirteenfinal.fragments.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_outputFragment"
+            app:destination="@id/outputFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/outputFragment"
+        android:name="com.exercise.tbchomeworkthirteenfinal.fragments.OutputFragment"
+        android:label="fragment_output"
+        tools:layout="@layout/fragment_output" >
+        <action
+            android:id="@+id/action_outputFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <argument
+            android:name="sendData"
+            app:argType="com.exercise.tbchomeworkthirteenfinal.UserData[]" />
+    </fragment>
+</navigation>
